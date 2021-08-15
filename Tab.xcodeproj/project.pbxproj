@@ -13,6 +13,10 @@
 		47607F0726C89F8800D147A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47607F0526C89F8800D147A2 /* Main.storyboard */; };
 		47607F0926C89F8900D147A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47607F0826C89F8900D147A2 /* Assets.xcassets */; };
 		47607F0C26C89F8900D147A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47607F0A26C89F8900D147A2 /* LaunchScreen.storyboard */; };
+		47607F1826C8A4C600D147A2 /* lightON.png in Resources */ = {isa = PBXBuildFile; fileRef = 47607F1626C8A4C600D147A2 /* lightON.png */; };
+		47607F1926C8A4C600D147A2 /* lightOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 47607F1726C8A4C600D147A2 /* lightOff.png */; };
+		47607F1B26C8A5DF00D147A2 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47607F1A26C8A5DF00D147A2 /* ImageViewController.swift */; };
+		47607F1D26C8A8CC00D147A2 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47607F1C26C8A8CC00D147A2 /* DateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		47607F0826C89F8900D147A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47607F0B26C89F8900D147A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47607F0D26C89F8900D147A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47607F1626C8A4C600D147A2 /* lightON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightON.png; sourceTree = "<group>"; };
+		47607F1726C8A4C600D147A2 /* lightOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightOff.png; sourceTree = "<group>"; };
+		47607F1A26C8A5DF00D147A2 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		47607F1C26C8A8CC00D147A2 /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,27 @@
 		47607EFE26C89F8800D147A2 /* Tab */ = {
 			isa = PBXGroup;
 			children = (
+				47607F1326C8A49400D147A2 /* images */,
 				47607EFF26C89F8800D147A2 /* AppDelegate.swift */,
 				47607F0126C89F8800D147A2 /* SceneDelegate.swift */,
 				47607F0326C89F8800D147A2 /* ViewController.swift */,
+				47607F1A26C8A5DF00D147A2 /* ImageViewController.swift */,
+				47607F1C26C8A8CC00D147A2 /* DateViewController.swift */,
 				47607F0526C89F8800D147A2 /* Main.storyboard */,
 				47607F0826C89F8900D147A2 /* Assets.xcassets */,
 				47607F0A26C89F8900D147A2 /* LaunchScreen.storyboard */,
 				47607F0D26C89F8900D147A2 /* Info.plist */,
 			);
 			path = Tab;
+			sourceTree = "<group>";
+		};
+		47607F1326C8A49400D147A2 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				47607F1726C8A4C600D147A2 /* lightOff.png */,
+				47607F1626C8A4C600D147A2 /* lightON.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				47607F0C26C89F8900D147A2 /* LaunchScreen.storyboard in Resources */,
+				47607F1926C8A4C600D147A2 /* lightOff.png in Resources */,
 				47607F0926C89F8900D147A2 /* Assets.xcassets in Resources */,
 				47607F0726C89F8800D147A2 /* Main.storyboard in Resources */,
+				47607F1826C8A4C600D147A2 /* lightON.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47607F1D26C8A8CC00D147A2 /* DateViewController.swift in Sources */,
 				47607F0426C89F8800D147A2 /* ViewController.swift in Sources */,
 				47607F0026C89F8800D147A2 /* AppDelegate.swift in Sources */,
+				47607F1B26C8A5DF00D147A2 /* ImageViewController.swift in Sources */,
 				47607F0226C89F8800D147A2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +320,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jkim734.Tab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jkim734.Tab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
