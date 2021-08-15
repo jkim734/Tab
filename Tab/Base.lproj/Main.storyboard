@@ -15,6 +15,28 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="file.png" translatesAutoresizingMaskIntoConstraints="NO" id="LuL-cw-7BB">
+                                <rect key="frame" x="40" y="137" width="311" height="571"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2n-g7-WiK">
+                                <rect key="frame" x="16" y="44" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="이미지뷰로 이동"/>
+                                <connections>
+                                    <action selector="btnMoveImageView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KbJ-u3-TaE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIA-IO-jiY">
+                                <rect key="frame" x="249" y="44" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="데이트 피커뷰로 이동"/>
+                                <connections>
+                                    <action selector="btnMoveDatePickerView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dxZ-rh-wJT"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -22,7 +44,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960" y="-375"/>
+            <point key="canvasLocation" x="960" y="-264.45497630331755"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hku-aZ-ngj">
@@ -37,13 +59,14 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="PXE-Mz-7q0"/>
                         <segue destination="j8n-r3-L1M" kind="relationship" relationship="viewControllers" id="sV3-FR-E33"/>
+                        <segue destination="e1s-9K-4JV" kind="relationship" relationship="viewControllers" id="odd-AM-vcS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lzo-le-6ed" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="20" y="88.862559241706151"/>
         </scene>
-        <!--Item-->
+        <!--Image View Controller-->
         <scene sceneID="qB8-3t-dh9">
             <objects>
                 <viewController id="j8n-r3-L1M" customClass="ImageViewController" customModule="Tab" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,16 +74,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwd-hr-gBd">
-                                <rect key="frame" x="125" y="746" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="확대"/>
-                                <connections>
-                                    <action selector="btnResizeImage:" destination="j8n-r3-L1M" eventType="touchUpInside" id="BG1-4L-1xp"/>
-                                </connections>
-                            </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aal-Ob-g3F">
-                                <rect key="frame" x="268" y="746" width="49" height="31"/>
+                                <rect key="frame" x="261" y="685" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="switchImageOff:" destination="j8n-r3-L1M" eventType="valueChanged" id="GhG-d8-BLV"/>
@@ -70,11 +85,19 @@
                                 <rect key="frame" x="106" y="168" width="202" height="405"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwd-hr-gBd">
+                                <rect key="frame" x="106" y="685" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="확대"/>
+                                <connections>
+                                    <action selector="btnResizeImage:" destination="j8n-r3-L1M" eventType="touchUpInside" id="BG1-4L-1xp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uyu-fZ-wqd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="sjg-AA-a5h"/>
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="sjg-AA-a5h"/>
                     <connections>
                         <outlet property="btnResize" destination="dwd-hr-gBd" id="9C6-cl-iSM"/>
                         <outlet property="imgView" destination="rnv-kA-eXP" id="FTu-rf-x5h"/>
@@ -82,10 +105,58 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hS-35-Sep" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791" y="-33"/>
+            <point key="canvasLocation" x="1817" y="89"/>
+        </scene>
+        <!--Date View Controller-->
+        <scene sceneID="CjQ-8c-cSf">
+            <objects>
+                <viewController id="e1s-9K-4JV" customClass="DateViewController" customModule="Tab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nnU-EI-OqV">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="hG8-x9-bZT">
+                                <rect key="frame" x="35" y="314" width="320" height="216"/>
+                                <locale key="locale" localeIdentifier="ko_KR"/>
+                                <connections>
+                                    <action selector="changeDatePicker:" destination="e1s-9K-4JV" eventType="valueChanged" id="riI-Qg-9hA"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="현재시간:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMK-Ys-SZu">
+                                <rect key="frame" x="20" y="195" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="선택시간:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUa-Gi-kM3">
+                                <rect key="frame" x="20" y="582" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iAT-ta-eVe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hG8-x9-bZT" firstAttribute="centerY" secondItem="nnU-EI-OqV" secondAttribute="centerY" id="WVc-UB-KWB"/>
+                            <constraint firstItem="hG8-x9-bZT" firstAttribute="centerX" secondItem="nnU-EI-OqV" secondAttribute="centerX" id="Yao-Vw-VwH"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="fPq-2a-CMC"/>
+                    <connections>
+                        <outlet property="lblCurrentTime" destination="JMK-Ys-SZu" id="Fps-4G-xCy"/>
+                        <outlet property="lblPickerTime" destination="oUa-Gi-kM3" id="gnt-Yu-7SX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y3R-g8-z2p" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960" y="477"/>
         </scene>
     </scenes>
     <resources>
+        <image name="file.png" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
